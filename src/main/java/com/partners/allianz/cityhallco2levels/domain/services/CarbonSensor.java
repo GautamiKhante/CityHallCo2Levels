@@ -1,13 +1,10 @@
 package com.partners.allianz.cityhallco2levels.domain.services;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
+@Entity
 public class CarbonSensor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
