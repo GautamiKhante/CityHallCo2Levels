@@ -47,7 +47,8 @@ public class District {
     }
 
     public String getCarbonLevels() {
-        return carbonLevels;
+        CarbonSensor carbonSensor = new CarbonSensor();
+        return carbonSensor.getSensorData();
     }
 
     public void setCarbonLevels(String carbonLevels) {
