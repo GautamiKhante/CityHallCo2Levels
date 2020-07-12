@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>City Hall Pune</title>
+</head>
+<body>
+<h1>District List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>DistrictName</th>
+        <th>Co2Levels</th>
+    </tr>
+    <tr th:each="district : ${districts}">
+        <td th:text="${district.id}"></td>
+        <td th:text="${district.districtName}">  </td>
+        <td th:text="${district.carbonSensors.carbonLevels}"></td>
+
+    </tr>
+</table>
+
+</body>
+</html>

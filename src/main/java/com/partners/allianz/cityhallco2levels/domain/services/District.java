@@ -1,9 +1,11 @@
 package com.partners.allianz.cityhallco2levels.domain.services;
 
+import lombok.*;
+
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
+
+
 @Entity
 public class District {
     @Id
@@ -12,22 +14,18 @@ public class District {
     private String districtName;
     private String carbonLevels;
 
+    // private CarbonSensor carbonsensor
 
     @ManyToOne
+    @JoinColumn(name = "city_id")
     private City city;
 
-    @ManyToMany
-    @JoinTable(name = "city_district", joinColumns = @JoinColumn(name = "district_id"),
-            inverseJoinColumns = @JoinColumn(name = "city_id"))
-    private Set<CarbonSensor> sensors =new HashSet<>();
-
     public District() {
-
     }
+    public District(String districtName,String carbonLevels) {
+        this.districtName= districtName;
+        this.carbonLevels= carbonLevels;
 
-    public District(String carbonLevels, String districtName) {
-        this.carbonLevels = carbonLevels;
-        this.districtName = districtName;
     }
 
     public Long getId() {
@@ -47,29 +45,14 @@ public class District {
     }
 
     public String getCarbonLevels() {
-        CarbonSensor carbonSensor = new CarbonSensor();
-        return carbonSensor.getSensorData();
+        return carbonLevels;
     }
 
     public void setCarbonLevels(String carbonLevels) {
         this.carbonLevels = carbonLevels;
     }
 
-    public City getCity() {
-        return city;
-    }
 
-    public void setCity(City city) {
-        this.city = city;
-    }
-
-    public Set<CarbonSensor> getSensors() {
-        return sensors;
-    }
-
-    public void setSensors(Set<CarbonSensor> sensors) {
-        this.sensors = sensors;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -78,24 +61,11 @@ public class District {
         District district = (District) o;
         return Objects.equals(id, district.id) &&
                 Objects.equals(districtName, district.districtName) &&
-                Objects.equals(carbonLevels, district.carbonLevels) &&
-                Objects.equals(city, district.city) &&
-                Objects.equals(sensors, district.sensors);
+                Objects.equals(carbonLevels, district.carbonLevels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, districtName, carbonLevels, city, sensors);
-    }
-
-    @Override
-    public String toString() {
-        return "District{" +
-                "id=" + id +
-                ", districtName='" + districtName + '\'' +
-                ", carbonLevels='" + carbonLevels + '\'' +
-                ", city=" + city +
-                ", sensors=" + sensors +
-                '}';
+        return Objects.hash(id, districtName, carbonLevels, city);
     }
 }
