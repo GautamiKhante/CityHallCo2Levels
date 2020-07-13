@@ -1,7 +1,5 @@
 package com.partners.allianz.cityhallco2levels.domain.services;
 
-import lombok.*;
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -22,9 +20,11 @@ public class District {
 
     public District() {
     }
-    public District(String districtName,String carbonLevels) {
-        this.districtName= districtName;
-        this.carbonLevels= carbonLevels;
+
+    public District(String districtName, String carbonLevels, Long id) {
+        this.districtName = districtName;
+        this.carbonLevels = carbonLevels;
+        this.id = id;
 
     }
 
@@ -52,7 +52,13 @@ public class District {
         this.carbonLevels = carbonLevels;
     }
 
+    public City getCity() {
+        return city;
+    }
 
+    public void setCity(City city) {
+        this.city = city;
+    }
 
     @Override
     public boolean equals(Object o) {
