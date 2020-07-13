@@ -9,6 +9,10 @@ import com.partners.allianz.cityhallco2levels.repository.DistrictRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+/**
+ * Bootstrapdata class for adding the data
+ */
+
 @Component
 public class BootStrapData implements CommandLineRunner {
     private final CityRepository cityRepository;
@@ -25,12 +29,10 @@ public class BootStrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         City city = new City("Pune");
-
         CarbonSensor carbonSensor1 = new CarbonSensor("North", "44Kg");
         District district1 = new District("Shivajinagar", carbonSensor1.getSensorData(), city.getId());
         city.getDistricts().add(district1);
         carbonSensor1.setDistricts(district1);
-
 
         CarbonSensor carbonSensor2 = new CarbonSensor("South", "38Kg");
         District district2 = new District("Aundh", carbonSensor2.getSensorData(), city.getId());
@@ -47,19 +49,16 @@ public class BootStrapData implements CommandLineRunner {
         city.getDistricts().add(district4);
         carbonSensor4.setDistricts(district4);
 
-
         cityRepository.save(city);
         district1.setCity(city);
         district2.setCity(city);
         district3.setCity(city);
         district4.setCity(city);
 
-
         carbonSensorRepository.save(carbonSensor1);
         carbonSensorRepository.save(carbonSensor2);
         carbonSensorRepository.save(carbonSensor3);
         carbonSensorRepository.save(carbonSensor4);
-
 
     }
 }

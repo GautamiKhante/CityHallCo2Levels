@@ -5,6 +5,10 @@ import com.partners.allianz.cityhallco2levels.repository.DistrictRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
+/**
+ * Implementation of District service.
+ */
 @Service
 public class DistrictServiceImpl implements DistrictService {
 

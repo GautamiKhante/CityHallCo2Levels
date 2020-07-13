@@ -1,12 +1,13 @@
 package com.partners.allianz.cityhallco2levels.controller;
-
-
 import com.partners.allianz.cityhallco2levels.domain.services.City;
 import com.partners.allianz.cityhallco2levels.services.CityService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+/**
+ * Class City Controller for the CRUD operations.
+ */
 @RestController
 @RequestMapping("/city")
 public class CityController {

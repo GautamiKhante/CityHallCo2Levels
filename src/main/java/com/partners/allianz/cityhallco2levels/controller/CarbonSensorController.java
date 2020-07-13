@@ -6,12 +6,15 @@ import com.partners.allianz.cityhallco2levels.services.CarbonSensorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+
+/**
+ * Controller class for Carbon sensors.
+ */
 @RestController
 @RequestMapping("/sensor")
 public class CarbonSensorController {
 
     private final CarbonSensorService carbonSensorService;
-
 
     public CarbonSensorController(CarbonSensorService carbonSensorService) {
         this.carbonSensorService = carbonSensorService;

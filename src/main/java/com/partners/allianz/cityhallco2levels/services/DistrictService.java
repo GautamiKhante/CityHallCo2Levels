@@ -5,6 +5,9 @@ import com.partners.allianz.cityhallco2levels.domain.services.District;
 
 import java.util.Optional;
 
+/**
+ * Interface for the operation on Districts.
+ */
 public interface DistrictService {
 
     District saveDistrict(District district);

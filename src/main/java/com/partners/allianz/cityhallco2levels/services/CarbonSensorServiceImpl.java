@@ -5,6 +5,10 @@ import com.partners.allianz.cityhallco2levels.repository.CarbonSensorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
+/**
+ * Implementation of Carbon service interface.
+ */
 @Service
 public class CarbonSensorServiceImpl implements CarbonSensorService {
     private final CarbonSensorRepository carbonSensorRepository;

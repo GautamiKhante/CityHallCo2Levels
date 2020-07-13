@@ -5,6 +5,10 @@ import com.partners.allianz.cityhallco2levels.domain.services.District;
 
 import java.util.Optional;
 
+/**
+ * Interface for carbon sensor Operations.
+ */
+
 public interface CarbonSensorService {
 
     CarbonSensor saveSensor(CarbonSensor carbonSensor);

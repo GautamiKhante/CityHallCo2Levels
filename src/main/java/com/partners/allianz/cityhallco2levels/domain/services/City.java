@@ -1,17 +1,14 @@
 package com.partners.allianz.cityhallco2levels.domain.services;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * POJO class for City
+ */
 
-@NoArgsConstructor
 @Entity
-@EqualsAndHashCode
 @Table(name = "city")
 public class City {
 
@@ -25,8 +22,17 @@ public class City {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "city")
     private Set<District> districts = new HashSet<>();
 
+    /**
+     * Constructor
+     */
+    public City() {
+    }
+
+    /**
+     * Constructor
+     */
     public City(String cityName) {
-        this.cityName=cityName;
+        this.cityName = cityName;
 
     }
 

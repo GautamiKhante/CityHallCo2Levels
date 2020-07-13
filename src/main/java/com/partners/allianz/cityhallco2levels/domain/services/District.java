@@ -3,7 +3,9 @@ package com.partners.allianz.cityhallco2levels.domain.services;
 import javax.persistence.*;
 import java.util.Objects;
 
-
+/**
+ * District POJO class for the district.
+ */
 @Entity
 public class District {
     @Id
@@ -12,14 +14,19 @@ public class District {
     private String districtName;
     private String carbonLevels;
 
-    // private CarbonSensor carbonsensor
-
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
 
+    /**
+     * Constructor
+     */
     public District() {
     }
+
+    /**
+     * Parameterised Constructor
+     */
 
     public District(String districtName, String carbonLevels, Long id) {
         this.districtName = districtName;
@@ -60,6 +67,9 @@ public class District {
         this.city = city;
     }
 
+    /**
+     *equals method
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

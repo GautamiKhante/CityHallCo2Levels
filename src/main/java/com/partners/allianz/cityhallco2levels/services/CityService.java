@@ -5,6 +5,10 @@ import com.partners.allianz.cityhallco2levels.domain.services.City;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Inerface for the operations fir City.
+ */
+
 public interface CityService {
 
    City saveCity(City city);

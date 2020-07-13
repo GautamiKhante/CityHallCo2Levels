@@ -4,9 +4,11 @@ import com.partners.allianz.cityhallco2levels.domain.services.City;
 import com.partners.allianz.cityhallco2levels.repository.CityRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
+/**
+ * Implementation of  City service .
+ */
 @Service
 public class CityServiceImpl implements CityService {
 
